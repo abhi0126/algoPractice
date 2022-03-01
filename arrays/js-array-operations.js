@@ -25,9 +25,40 @@ function maxConsecutiveOnes(nums) {
             count = 0;
         }
     }
-      return Math.max(maxCount, count);
+    return Math.max(maxCount, count);
 }
 
 const nums = [1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1];
-// const nums = [];
-console.log(maxConsecutiveOnes(nums));
+console.log('Max Consecutive Ones' + maxConsecutiveOnes(nums));
+
+// Given an array nums of integers, return how many of them contain an even number of digits.
+var findNumbers = function (nums) {
+    let count = 0;
+    for (i = 0; i < nums.length; i++) {
+        if (nums[i].toString().length % 2 === 0) {
+            count++;
+        }
+    }
+    return count;
+}
+
+const nums1 = [12, 345, 2, 6, 7896, 789621];
+console.log('Find Numbers' + findNumbers(nums1));
+
+
+// Given an integer array nums sorted in non-decreasing order, 
+// return an array of the squares of each number sorted in non-decreasing order.
+
+var sortedSquares = function(nums) {
+    let numsSquare = [];
+    for (i = 0; i < nums.length; i++) {
+        numsSquare.push(nums[i] * nums [i]);
+    }
+    console.log(numsSquare);
+    return numsSquare.sort(function(a, b) {
+        return a - b;
+    });
+}
+
+const nums2 = [-4,-1,0,3,10];
+console.log('Square: ' + sortedSquares(nums2));
